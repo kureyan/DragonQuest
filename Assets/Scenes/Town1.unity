@@ -17197,10 +17197,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701b7c63e9da3644e9b3c2bff6a579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LearnableSpells: []
   moveSpeed: 10
-  solidObjects:
+  solidObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
+  encountLayer:
+    serializedVersion: 2
+    m_Bits: 256
+  TransitionAreaLayer:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!95 &1412259864
 Animator:
   serializedVersion: 3

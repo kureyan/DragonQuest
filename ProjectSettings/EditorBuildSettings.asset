@@ -8,4 +8,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Castle1-2.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Castle1-1.unity
+    guid: 5b2f18d91b9faa94c8900c7fed457ea0
+  - enabled: 1
+    path: Assets/Scenes/Field.unity
+    guid: d528a6dc8012e8d40a96522daf6bc431
+  - enabled: 1
+    path: Assets/Scenes/Town1.unity
+    guid: 291bda1c8bffe504aa363234dcace6ce
   m_configObjects: {}

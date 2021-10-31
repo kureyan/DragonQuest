@@ -1,9 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    //覚える呪文一覧
+    [SerializeField] List<LearnableSpell> LearnableSpells;
+
     //Playerの1マス移動
 
     [SerializeField] float moveSpeed;
@@ -17,13 +21,15 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask solidObjectsLayer;
     //エンカウント判定のLayer
     [SerializeField] LayerMask encountLayer;
+    //シーン移動判定のLayer
+    [SerializeField] LayerMask TransitionAreaLayer;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
 
     }
-    
+
     void Update()
     {
         if(!isMoving)
@@ -75,6 +81,7 @@ public class Player : MonoBehaviour
 
         transform.position = targetPos;
         isMoving = false;
+        CheckForArea();
         CheckForEncounters();
     }
 
@@ -91,7 +98,7 @@ public class Player : MonoBehaviour
         if(Physics2D.OverlapCircle(transform.position, 0.1f, encountLayer))
         {
             //ランダムエンカウント
-            if (Random.Range(0,100) < 10)
+            if (UnityEngine.Random.Range(0,100) < 10)
             {
                 //Random.Range(0,100):0～90までのどれかの数字が出る
                 //10より小さい数字は0～9までの10個:10%の確率
@@ -102,5 +109,30 @@ public class Player : MonoBehaviour
         }
 
     }
+    //自分の場所から、円のRayを飛ばして、シーン移動Layerに当たったら、シーンを切り替える
+    void CheckForArea()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, (Vector2)input, 0.1f, TransitionAreaLayer);
 
+        //なにかと衝突した時だけそのオブジェクトの名前をログに出す
+        if (hit.collider)
+        {
+            //Debug.Log(hit.collider.gameObject.name);
+            Scene obj = GameObject.Find(hit.collider.gameObject.name).GetComponent<Scene>();
+            obj.LoadArea();
+        }
+    }
+
+}
+
+//覚える呪文クラス:どのレベルで何を覚えるのか
+[Serializable]
+public class LearnableSpell
+{
+    //ヒエラルキーで設定する
+    [SerializeField] SpellBase _base;
+    [SerializeField] int level;
+
+    public SpellBase Base { get => _base; }
+    public int Level { get => level; }
 }

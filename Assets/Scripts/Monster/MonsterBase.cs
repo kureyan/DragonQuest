@@ -23,7 +23,7 @@ public class MonsterBase : ScriptableObject
     [SerializeField] int exp;
     [SerializeField] int gold;
 
-    //他ガイルからattackの値の取得はできるが変更はできない
+    //他ファイルからattackの値の取得はできるが変更はできない
     public int MaxHP { get => maxHP; }
     public int MaxMP { get => maxMP; }
     public int Attack { get => attack; }
