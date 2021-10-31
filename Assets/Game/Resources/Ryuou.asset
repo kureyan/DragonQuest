@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab07832d95f58c140a2ef97de26954b4, type: 3}
+  m_Name: Ryuou
+  m_EditorClassIdentifier: 
+  name: "\u308A\u3085\u3046\u304A\u3046"
+  description: 
+  monsterSprite: {fileID: 21300000, guid: e7c9db0b1b0541042b7d8d4385a9bb94, type: 3}
+  maxHP: 240
+  maxMP: 40
+  attack: 107
+  defence: 110
+  speed: 55
+  exp: 0
+  gold: 0
