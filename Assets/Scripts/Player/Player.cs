@@ -5,8 +5,15 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    int level;
+
+    //使える呪文
+    public List<Spell> Spells { get; set; }
+
     //覚える呪文一覧
     [SerializeField] List<LearnableSpell> LearnableSpells;
+
+    public List<LearnableSpell> LearnableSpells1 { get => LearnableSpells; }
 
     //Playerの1マス移動
 
@@ -16,6 +23,7 @@ public class Player : MonoBehaviour
     Vector2 input;
 
     Animator animator;
+    LearnableSpell leanablespell;
 
     //壁判定のLayer
     [SerializeField] LayerMask solidObjectsLayer;
@@ -24,9 +32,11 @@ public class Player : MonoBehaviour
     //シーン移動判定のLayer
     [SerializeField] LayerMask TransitionAreaLayer;
 
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        leanablespell = GetComponent<LearnableSpell>(); 
 
     }
 
@@ -123,11 +133,27 @@ public class Player : MonoBehaviour
         }
     }
 
+    void LevelUp(int pLevel)
+    {
+        level = pLevel;
+
+        //使える呪文の設定;覚える呪文のレベル以上なら、Spellsに追加
+        foreach (LearnableSpell spell in LearnableSpells)
+        {
+            if (pLevel >= leanablespell.Level)
+            {
+                //呪文を覚える
+                Spells.Add(new Spell(leanablespell.Base));
+            }
+                
+        }
+
+    }
 }
 
 //覚える呪文クラス:どのレベルで何を覚えるのか
 [Serializable]
-public class LearnableSpell
+public class LearnableSpell : MonoBehaviour
 {
     //ヒエラルキーで設定する
     [SerializeField] SpellBase _base;
@@ -136,3 +162,4 @@ public class LearnableSpell
     public SpellBase Base { get => _base; }
     public int Level { get => level; }
 }
+

@@ -11,10 +11,10 @@ public class Spell
     public int MP { get; set; }
 
     //‰Šúİ’è
-    public Spell(SpellBase pBase)
+    public Spell(SpellBase _Base)
     {
-        Base = pBase;
-        MP = pBase.MP;
+        Base = _Base;
+        MP = _Base.MP;
     }
 
 }
