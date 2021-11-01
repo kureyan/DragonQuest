@@ -1146,7 +1146,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701b7c63e9da3644e9b3c2bff6a579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LearnableSpells: []
+  playerName: "\u30EA\u30BC"
+  LearnableSpells:
+  - _base: {fileID: 11400000, guid: de954d77214affd45a8d140897b86e8b, type: 2}
+    level: 3
+  - _base: {fileID: 11400000, guid: a9f1f2a2a96fe1c4abd18d768f7afe0d, type: 2}
+    level: 4
+  - _base: {fileID: 11400000, guid: 684d63a5d555e0c4289ca57cf480267b, type: 2}
+    level: 7
+  - _base: {fileID: 11400000, guid: 484217b69438f954693155be8cb165b2, type: 2}
+    level: 9
   moveSpeed: 10
   solidObjectsLayer:
     serializedVersion: 2

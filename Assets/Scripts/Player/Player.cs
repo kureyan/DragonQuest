@@ -7,13 +7,15 @@ public class Player : MonoBehaviour
 {
     int level;
 
+    [SerializeField] string playerName;
+
     //使える呪文
     public List<Spell> Spells { get; set; }
 
     //覚える呪文一覧
     [SerializeField] List<LearnableSpell> LearnableSpells;
 
-    public List<LearnableSpell> LearnableSpells1 { get => LearnableSpells; }
+    //public List<LearnableSpell> LearnableSpells { get => LearnableSpells; }
 
     //Playerの1マス移動
 
@@ -36,7 +38,6 @@ public class Player : MonoBehaviour
     private void Awake()
     {
         animator = GetComponent<Animator>();
-        leanablespell = GetComponent<LearnableSpell>(); 
 
     }
 
@@ -133,7 +134,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    void LevelUp(int pLevel)
+    /*void LevelUp(int pLevel)
     {
         level = pLevel;
 
@@ -148,12 +149,12 @@ public class Player : MonoBehaviour
                 
         }
 
-    }
+    }*/
 }
 
 //覚える呪文クラス:どのレベルで何を覚えるのか
 [Serializable]
-public class LearnableSpell : MonoBehaviour
+public class LearnableSpell
 {
     //ヒエラルキーで設定する
     [SerializeField] SpellBase _base;
