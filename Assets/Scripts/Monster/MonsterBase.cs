@@ -31,5 +31,7 @@ public class MonsterBase : ScriptableObject
     public int Speed { get => speed; }
     public int Exp { get => exp; }
     public int Gold { get => gold; }
-
+    public string Name { get => name; }
+    public string Description { get => description; }
+    public Sprite MonsterSprite { get => monsterSprite; }
 }

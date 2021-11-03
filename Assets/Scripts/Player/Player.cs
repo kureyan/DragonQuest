@@ -7,7 +7,11 @@ public class Player : MonoBehaviour
 {
     int level;
 
-    [SerializeField] string playerName;
+    public string Name;
+    public int Level;
+    public int HP;
+    public int MP;
+    
 
     //Žg‚¦‚éŽô•¶
     public List<Spell> Spells { get; set; }
