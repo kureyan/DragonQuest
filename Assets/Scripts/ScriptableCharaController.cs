@@ -6,6 +6,8 @@ public class ScriptableCharaController : MonoBehaviour
 {
 
 	public MonsterBase enemyData;
+	GameObject PlayerObj;
+	Player player;
 
 	void Start()
 	{
@@ -26,5 +28,8 @@ public class ScriptableCharaController : MonoBehaviour
 					", 防御力は" + enemyData.Defence +
 					", 経験値は" + enemyData.Exp +
 					", ゴールドは" + enemyData.Gold + "です。");
+		PlayerObj = GameObject.Find("Player");
+		player = PlayerObj.GetComponent<Player>();
+		Debug.Log("わたしの名前は"+player.Name);
 	}
 }

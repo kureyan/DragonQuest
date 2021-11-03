@@ -13,7 +13,7 @@ public class BattleHud : MonoBehaviour
 
     public void SetPlayerData(Player player)
     {
-        nameText.text = player.Name;
+        //nameText.text = player.PName;
         hpText.text = "HP    " + player.HP;
         mpText.text = "MP    " + player.MP;
         levelText.text = "LV    "+ player.Level;
