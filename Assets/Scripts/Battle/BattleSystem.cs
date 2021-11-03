@@ -12,7 +12,7 @@ public class BattleSystem : MonoBehaviour
     private void Start()
     {
 
-        playerHud.SetPlayerData(player);
+        //playerHud.SetPlayerData(player);
         //enemyHud.SetMonsterData(enemyUnit.Monster);
         enemyUnit.Setup();
     }
