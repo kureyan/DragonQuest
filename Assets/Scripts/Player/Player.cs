@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
 
     //壁判定のLayer
     [SerializeField] LayerMask solidObjectsLayer;
+    [SerializeField] LayerMask interactableLayer;
     //エンカウント判定のLayer
     [SerializeField] LayerMask encountLayer;
     //シーン移動判定のLayer
@@ -104,7 +105,7 @@ public class Player : MonoBehaviour
     bool IsWalkable(Vector2 targetPos)
     {
         //targetPosに半径0.1fの円のRayを飛ばして、ぶつからなかった
-        return Physics2D.OverlapCircle(targetPos, 0.1f,solidObjectsLayer) == false;
+        return Physics2D.OverlapCircle(targetPos, 0.1f,solidObjectsLayer | interactableLayer) == false;
     }
 
     //自分の場所から、円のRayを飛ばして、エンカウントLayerに当たったら、ランダムエンカウントする
