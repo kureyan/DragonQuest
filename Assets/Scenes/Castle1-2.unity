@@ -1146,7 +1146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701b7c63e9da3644e9b3c2bff6a579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerName: "\u30EA\u30BC"
+  Name: 
+  Level: 0
+  HP: 0
+  MP: 0
   LearnableSpells:
   - _base: {fileID: 11400000, guid: de954d77214affd45a8d140897b86e8b, type: 2}
     level: 3
@@ -1159,7 +1162,10 @@ MonoBehaviour:
   moveSpeed: 10
   solidObjectsLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 2048
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   encountLayer:
     serializedVersion: 2
     m_Bits: 256
