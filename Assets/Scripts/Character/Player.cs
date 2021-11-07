@@ -81,7 +81,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    //NPCに向かってZボタンを押したらログを出す
+    //interactableLayerがついているもの(NPC)に向かってZボタンを押したらログを出す
     //Playerの向いている方からRayを飛ばす
     //RayにぶつかったオブジェクトがNPCならログを出す
     void Interact()
@@ -95,7 +95,7 @@ public class Player : MonoBehaviour
         Collider2D collider2D = Physics2D.OverlapCircle(interactPos, 0.1f, interactableLayer);
         if (collider2D)
         {
-            Debug.Log("Collider2Dに向かってLayを飛ばした");
+            collider2D.GetComponent<NPC>().Interact();
         }
     }
 
