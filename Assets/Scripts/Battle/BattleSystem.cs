@@ -7,12 +7,11 @@ public class BattleSystem : MonoBehaviour
     [SerializeField] BattleHud playerHud;
     [SerializeField] BattleHud enemyHud;
     [SerializeField] BattleUnit enemyUnit;
-    Player player;
 
     private void Start()
     {
 
-        //playerHud.SetPlayerData(player);
+        playerHud.SetData();
         //enemyHud.SetMonsterData(enemyUnit.Monster);
         enemyUnit.Setup();
     }

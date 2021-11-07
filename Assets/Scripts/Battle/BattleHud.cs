@@ -10,18 +10,23 @@ public class BattleHud : MonoBehaviour
     [SerializeField] Text mpText;
     [SerializeField] Text levelText;
 
+    GameObject PlayerObj;
+    Player player;
 
-    public void SetPlayerData(Player player)
+
+    public void SetData()
     {
+        PlayerObj = GameObject.Find("Player");
+        player = PlayerObj.GetComponent<Player>();
         nameText.text = player.Name;
         hpText.text = "HP    " + player.HP;
         mpText.text = "MP    " + player.MP;
         levelText.text = "LV    "+ player.Level;
     }
-    public void SetMonsterData(Monster monster)
+    /*public void SetMonsterData(Monster monster)
     {
         //nameText.text = monster.Base.Name;
         //hpText.text =??;
         //mpText.text =??;
-    }
+    }*/
 }

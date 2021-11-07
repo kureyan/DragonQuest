@@ -286,10 +286,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701b7c63e9da3644e9b3c2bff6a579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: 
-  Level: 0
-  HP: 0
-  MP: 0
+  Name: "\u30EA\u30BC"
+  Level: 4
+  HP: 20
+  MP: 10
   LearnableSpells:
   - _base: {fileID: 11400000, guid: de954d77214affd45a8d140897b86e8b, type: 2}
     level: 3
@@ -303,6 +303,9 @@ MonoBehaviour:
   solidObjectsLayer:
     serializedVersion: 2
     m_Bits: 128
+  interactableLayer:
+    serializedVersion: 2
+    m_Bits: 1024
   encountLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -319,7 +322,9 @@ GameObject:
   m_Component:
   - component: {fileID: 427113531}
   - component: {fileID: 427113530}
-  m_Layer: 0
+  - component: {fileID: 427113533}
+  - component: {fileID: 427113532}
+  m_Layer: 10
   m_Name: NPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -391,6 +396,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &427113532
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427113529}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.010762632, y: -0.13991666}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1.3333334}
+    newSize: {x: 1, y: 1.3333334}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6197144, y: 1.0104492}
+  m_EdgeRadius: 0
+--- !u!50 &427113533
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427113529}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &441849936
 GameObject:
   m_ObjectHideFlags: 0

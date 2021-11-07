@@ -75,6 +75,28 @@ public class Player : MonoBehaviour
             }
         }
         animator.SetBool("isMoving", isMoving);
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            Interact();
+        }
+    }
+
+    //NPCに向かってZボタンを押したらログを出す
+    //Playerの向いている方からRayを飛ばす
+    //RayにぶつかったオブジェクトがNPCならログを出す
+    void Interact()
+    {
+        //向いている方向
+        Vector3 faceDirection = new Vector3(animator.GetFloat("moveX"), animator.GetFloat("moveY"));
+        //干渉する場所(現在の場所から向いてる方向を足すからVector3)
+        Vector3 interactPos = transform.position + faceDirection;
+
+        //干渉する場所にRayを飛ばす
+        Collider2D collider2D = Physics2D.OverlapCircle(interactPos, 0.1f, interactableLayer);
+        if (collider2D)
+        {
+            Debug.Log("Collider2Dに向かってLayを飛ばした");
+        }
     }
 
     //コルーチンを使って徐々に目的地に近づける
