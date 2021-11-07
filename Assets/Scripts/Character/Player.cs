@@ -95,7 +95,9 @@ public class Player : MonoBehaviour
         Collider2D collider2D = Physics2D.OverlapCircle(interactPos, 0.1f, interactableLayer);
         if (collider2D)
         {
-            collider2D.GetComponent<NPC>().Interact();
+            //?をつけてないとIInteractableじゃなかった場合にエラーが出てしまう
+            //?をつけているとNullの場合、うしろを処理しない
+            collider2D.GetComponent<IInteractable>()?.Interact();
         }
     }
 
