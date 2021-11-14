@@ -39,11 +39,15 @@ public class Player : MonoBehaviour
     //シーン移動判定のLayer
     [SerializeField] LayerMask TransitionAreaLayer;
 
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
+    }
 
+    private void Start()
+    {
+        //位置指定
+        transform.position = Scene.zahyou[0];
     }
 
     void Update()
@@ -159,7 +163,8 @@ public class Player : MonoBehaviour
         {
             //Debug.Log(hit.collider.gameObject.name);
             Scene obj = GameObject.Find(hit.collider.gameObject.name).GetComponent<Scene>();
-            obj.LoadArea();
+            Debug.Log(obj.name);
+            obj.LoadArea(obj.name);
         }
     }
 

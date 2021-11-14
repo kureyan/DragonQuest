@@ -12,11 +12,11 @@ public class MapData : ScriptableObject
     [SerializeField] new string name;
     [TextArea]
     [SerializeField] string description;
-    [SerializeField] Vector2 zahyou;
+    [SerializeField] List<Vector2> zahyou;
 
     public string Name { get => name; }
     public string Description { get => description; }
-    public Vector2 Zahyou { get => zahyou; }
+    public List<Vector2> Zahyou { get => zahyou; }
 
 
 

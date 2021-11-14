@@ -36555,7 +36555,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273bd999ab66b9c468c0aedd0ce6fa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: Castle1-2
+  areaToLoad: {fileID: 11400000, guid: f6239c9bd9aae7a4898774b16c6215fa, type: 2}
 --- !u!66 &1177414618
 CompositeCollider2D:
   m_ObjectHideFlags: 0
@@ -38162,7 +38162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273bd999ab66b9c468c0aedd0ce6fa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: Field
+  areaToLoad: {fileID: 11400000, guid: 932021265bf37874498c1daef6bebd08, type: 2}
 --- !u!1 &1964595757
 GameObject:
   m_ObjectHideFlags: 0
