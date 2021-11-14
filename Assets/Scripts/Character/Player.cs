@@ -39,8 +39,6 @@ public class Player : MonoBehaviour
     //ƒV[ƒ“ˆÚ“®”»’è‚ÌLayer
     [SerializeField] LayerMask TransitionAreaLayer;
 
-
-
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -48,8 +46,9 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        
         //‰ŠúˆÊ’u
-        transform.position = Scene.zahyou[0];
+        transform.position = Scene.zahyou[Scene.num];
     }
 
     void Update()
