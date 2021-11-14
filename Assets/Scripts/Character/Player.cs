@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     //シーン移動判定のLayer
     [SerializeField] LayerMask TransitionAreaLayer;
 
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
@@ -46,7 +48,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
-        //位置指定
+        //初期位置
         transform.position = Scene.zahyou[0];
     }
 

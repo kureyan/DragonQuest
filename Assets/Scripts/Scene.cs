@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class Scene : MonoBehaviour
 {
     //public string areaToLoad;
-    public MapData areaToLoad;
+    public MapData map;
+    public int element;//MapData座標の要素番号
 
     Player player;
     //public static Vector2 zahyou = new Vector2(-18.5f, 18.8f);
@@ -21,18 +22,17 @@ public class Scene : MonoBehaviour
         //あるいは町の座標をマスターデータにして町から出たときはその座標からスタート
         //こっちができればルーラにも応用できる
 
-        zahyou = areaToLoad.Zahyou;
-        //Debug.Log("座標"+map.Zahyou);
-        //player.transform.position = map.Zahyou;
-
-
-
-
-
+        zahyou = map.Zahyou;
 
         //シーン移動
-        SceneManager.LoadScene(areaToLoad.Name);
+        SceneManager.LoadScene(map.Name);
         return zahyou;
         
+    }
+
+    public void GameStart()
+    {
+        zahyou = map.Zahyou;
+        SceneManager.LoadScene("Castle1-2");
     }
 }

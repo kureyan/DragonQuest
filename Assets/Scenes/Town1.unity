@@ -36073,7 +36073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 273bd999ab66b9c468c0aedd0ce6fa48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  areaToLoad: {fileID: 11400000, guid: 932021265bf37874498c1daef6bebd08, type: 2}
+  map: {fileID: 11400000, guid: 932021265bf37874498c1daef6bebd08, type: 2}
+  element: 1
 --- !u!66 &1817845672
 CompositeCollider2D:
   m_ObjectHideFlags: 0
