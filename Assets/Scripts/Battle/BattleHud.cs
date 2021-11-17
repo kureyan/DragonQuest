@@ -13,8 +13,7 @@ public class BattleHud : MonoBehaviour
     GameObject PlayerObj;
     Player player;
 
-
-    public void SetData()
+    public void SetPlayerData()
     {
         PlayerObj = GameObject.Find("Player");
         player = PlayerObj.GetComponent<Player>();
@@ -23,10 +22,4 @@ public class BattleHud : MonoBehaviour
         mpText.text = "MP    " + player.MP;
         levelText.text = "LV    "+ player.Level;
     }
-    /*public void SetMonsterData(Monster monster)
-    {
-        //nameText.text = monster.Base.Name;
-        //hpText.text =??;
-        //mpText.text =??;
-    }*/
 }

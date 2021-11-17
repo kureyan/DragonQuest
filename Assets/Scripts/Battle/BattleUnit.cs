@@ -11,7 +11,7 @@ public class BattleUnit : MonoBehaviour //戦うモンスターをセットする
     public Monster Monster { get; set; }
 
     //モンスターの画像と名前を反映する
-    public void Setup()
+    public void SetMonsterData()
     {
         Monster = new Monster(_base);
         Image image = GetComponent<Image>(); 

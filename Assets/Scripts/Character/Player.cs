@@ -39,6 +39,8 @@ public class Player : MonoBehaviour
     //ƒV[ƒ“ˆÚ“®”»’è‚ÌLayer
     [SerializeField] LayerMask TransitionAreaLayer;
 
+
+
     private void Awake()
     {
         animator = GetComponent<Animator>();
