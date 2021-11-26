@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701b7c63e9da3644e9b3c2bff6a579b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: "\u30EA\u30BC"
+  Name: "\u30CB\u30B1"
   Level: 4
   HP: 20
   MP: 10

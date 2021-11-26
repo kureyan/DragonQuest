@@ -30,4 +30,12 @@ public class BattleSystem : MonoBehaviour
         dialogBox.EnableCommandSelector(true);
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            dialogBox.EnableSpellSelector(true);
+        }
+    }
+
 }
