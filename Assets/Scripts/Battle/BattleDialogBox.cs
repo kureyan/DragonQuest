@@ -63,5 +63,9 @@ public class BattleDialogBox : MonoBehaviour
 
     }
 
+    public void UpdateCommandSelection(int selectCommand)
+    {
+
+    }
 
 }
