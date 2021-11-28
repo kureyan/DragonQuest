@@ -17,7 +17,7 @@ public class BattleSystem : MonoBehaviour
     {
         StartPhase,
         ChooseCommandPhase, //コマンド選択
-        ExcutePhase,        //実行
+        ExecutePhase,        //実行
         Result,
         End,
     }
@@ -60,14 +60,19 @@ public class BattleSystem : MonoBehaviour
                     phase = Phase.ChooseCommandPhase;
                     break;
                 case Phase.ChooseCommandPhase:
-                    //技選択をしたら次のフェーズにいく
+                    //コマンド選択をしたら次のフェーズにいく
                     //new WaitUntil(() => ここがtrueになるまで待機する
                     yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Return));
-                    phase = Phase.ExcutePhase;
+                    //コマンド選択
+                    player.selectCommandSO = player.commands[1];
+                    player.target = player;
+                    enemy.selectCommandSO = enemy.commands[0];
+                    enemy.target = enemy;
+                    phase = Phase.ExecutePhase;
                     break;
-                case Phase.ExcutePhase:
-                    player.Attack(enemy);
-                    enemy.Attack(player);
+                case Phase.ExecutePhase:
+                    player.selectCommandSO.Execute(player,player.target);
+                    enemy.selectCommandSO.Execute(enemy,enemy.target);
                     //どちらかが死亡したら
                     if(player.hp<=0 || enemy.hp <= 0)
                     {

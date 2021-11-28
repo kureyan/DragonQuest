@@ -8,10 +8,11 @@ public class Battler : MonoBehaviour
     public new string name;
     public int hp;
 
-    //攻撃ができる
-    public void Attack(Battler target)
-    {
-        target.hp -= 3;
-        Debug.Log($"{name}の攻撃:{target.name}に{3}のダメージ:残りHP{target.hp}");
-    }
+    //実行するコマンド
+    public CommandSO selectCommandSO;
+    public Battler target;
+
+    //持ってるコマンド
+    public CommandSO[] commands;
+
 }
