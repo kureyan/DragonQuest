@@ -55,7 +55,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if(!isMoving)
+        //戦闘中は動けないようにする
+        if (GameManager.instance.BattleSystem.activeInHierarchy)
+        {
+            return;
+        }
+
+        if (!isMoving)
         {
             //キーボードの入力方向に動く
             input.x = Input.GetAxisRaw("Horizontal");

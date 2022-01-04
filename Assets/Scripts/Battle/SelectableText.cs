@@ -19,7 +19,7 @@ public class SelectableText : Selectable
         OnSelectAction.Invoke(transform);
     }
 
-    //非ええええええ選択状態になった時に勝手に実行される関数
+    //非選択状態になった時に勝手に実行される関数
         public override void OnDeselect(BaseEventData eventData)
     {
         //base.OnDeselect(eventData);
